@@ -15,13 +15,13 @@ public class ProxyInitializer extends Initializer {
         Globals.Init(context);
         TrojanConfig cacheConfig = TrojanHelper.readTrojanConfig(Globals.getTrojanConfigPath());
         if (cacheConfig == null) {
-            LogHelper.e(TAG, "read null trojan config");
+            LogHelper.e(TAG, "read null trojan config|读取空的trojan配置");
         } else {
             cacheConfig.setCaCertPath(Globals.getCaCertPath());
             Globals.setTrojanConfigInstance(cacheConfig);
         }
         if (!Globals.getTrojanConfigInstance().isValidRunningConfig()) {
-            LogHelper.e(TAG, "Invalid trojan config!");
+            LogHelper.e(TAG, "Invalid trojan config!|不可用的trojan配置！");
         }
     }
 

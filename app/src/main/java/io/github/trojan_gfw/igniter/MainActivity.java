@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements TrojanConnection.
         });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Trojan URL");
+        builder.setTitle("Trojan 链接");
 
         trojanURLText = new EditText(this);
 

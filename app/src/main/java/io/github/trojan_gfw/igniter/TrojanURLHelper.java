@@ -2,6 +2,9 @@ package io.github.trojan_gfw.igniter;
 
 import java.net.URI;
 
+/*
+* Torjan链接辅助
+* */
 public class TrojanURLHelper {
     public static String GenerateTrojanURL(TrojanConfig trojanConfig) {
 

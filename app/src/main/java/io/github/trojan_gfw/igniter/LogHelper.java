@@ -4,7 +4,7 @@ import android.util.Log;
 
 public final class LogHelper {
 
-    // Logcat is line-buffered
+    // Logcat is line-buffered (Logcat是遇到换行或者缓冲区满再做flush的)
 
     private static final int maxLogSize = 1000;
 

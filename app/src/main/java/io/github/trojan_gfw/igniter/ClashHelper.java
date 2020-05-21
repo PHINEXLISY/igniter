@@ -6,6 +6,10 @@ import java.io.FileOutputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/*
+* 崩溃辅助类
+* Clash Helper
+* */
 public class ClashHelper {
 
     private static final String TAG = "ClashConfig";

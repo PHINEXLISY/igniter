@@ -12,6 +12,9 @@ import io.github.trojan_gfw.igniter.common.os.Threads;
 import io.github.trojan_gfw.igniter.common.utils.ProcessUtils;
 
 /**
+ * 应用初始化的辅助类。你可以直接继承{@link Initializer}来创建你自己的初始化器并且在{@link #registerMainInitializers()}
+ * 或者{@link #registerToolsInitializers()}中注册。
+ * 你应该小心仔细地终止你的初始化器所在的进程
  * Helper class of application initializations. You can just extend {@link Initializer} to create your
  * own initializer and register it in {@link #registerMainInitializers()} or {@link #registerToolsInitializers()}.
  * You should consider carefully to determine which process your initializers are run in.

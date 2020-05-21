@@ -5,6 +5,7 @@ import android.content.Context;
 import io.github.trojan_gfw.igniter.Globals;
 
 /**
+ * 运行在工具进程的初始化器
  * Initializer that runs in Tools Process.
  */
 public class ToolInitializer extends Initializer {

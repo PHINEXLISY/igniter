@@ -11,6 +11,10 @@ import cn.bingoogolapple.qrcode.core.BarcodeType;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
 import io.github.trojan_gfw.igniter.R;
 
+/*
+* 扫描二维码
+* QR Scan
+*/
 public class ScanQRCodeActivity extends AppCompatActivity implements ZXingView.Delegate {
     public static final String KEY_SCAN_CONTENT = "content";
 //    private static final String TAG = "ScanQRCodeActivity";

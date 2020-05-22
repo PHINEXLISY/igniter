@@ -24,7 +24,7 @@ public class TrojanConfig implements Parcelable {
 
 
     public TrojanConfig() {
-        // defaults
+        // defaults 默认配置
         this.localAddr = "127.0.0.1";
         this.localPort = 1081;
         this.remotePort = 443;

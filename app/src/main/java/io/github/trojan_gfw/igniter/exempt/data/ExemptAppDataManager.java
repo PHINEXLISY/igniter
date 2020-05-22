@@ -37,19 +37,29 @@ public class ExemptAppDataManager implements ExemptAppDataSource {
     private final PackageManager mPackageManager;
     private final String mExemptAppListFilePath;
 
+    /**
+     * 排除应用
+     * @param context 上下文
+     * @param exemptAppListFilePath 要排除的应用list所在的文件路径
+     */
     public ExemptAppDataManager(Context context, String exemptAppListFilePath) {
         super();
-        mPackageManager = context.getPackageManager();
+        mPackageManager = context.getPackageManager();//Android context return PackageManager instance to find global package information.安卓上下文提供获取应用程序信息的功能
         mExemptAppListFilePath = exemptAppListFilePath;
     }
 
+    /**
+     * 存储要排除应用的set
+     * @param exemptAppPackageNames exempt app package name set
+     */
     @Override
     public void saveExemptAppInfoSet(Set<String> exemptAppPackageNames) {
         File file = new File(mExemptAppListFilePath);
         if (file.exists()) {
             file.delete();
         }
-        if (exemptAppPackageNames == null || exemptAppPackageNames.isEmpty()) {
+        //If the exemptAppPackageNames does not exist or is empty.如果要排除应用的信息不存在或者为空
+        if (exemptAppPackageNames == null || exemptAppPackageNames.isEmpty()) {//
             return;
         }
         File dir = file.getParentFile();
@@ -93,7 +103,7 @@ public class ExemptAppDataManager implements ExemptAppDataSource {
     @Override
     public Set<String> loadExemptAppPackageNameSet() {
         Set<String> exemptAppPackageNames = readExemptAppListConfig();
-        // filter uninstalled apps
+        // filter uninstalled apps.已卸载应用过滤器
         List<ApplicationInfo> applicationInfoList = queryCurrentInstalledApps();
         Set<String> installedAppPackageNames = new HashSet<>();
         for (ApplicationInfo applicationInfo : applicationInfoList) {
@@ -112,7 +122,7 @@ public class ExemptAppDataManager implements ExemptAppDataSource {
         int flags = 0;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             flags |= PackageManager.MATCH_UNINSTALLED_PACKAGES | PackageManager.MATCH_DISABLED_COMPONENTS;
-        } else { // These flags are deprecated since Nougat.
+        } else { // These flags are deprecated since Nougat.从Nougat系统以来已被弃用
             flags |= PackageManager.GET_UNINSTALLED_PACKAGES | PackageManager.GET_DISABLED_COMPONENTS;
         }
         return mPackageManager.getInstalledApplications(flags);

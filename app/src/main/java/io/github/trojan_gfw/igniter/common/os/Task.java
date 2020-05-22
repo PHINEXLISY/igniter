@@ -6,6 +6,7 @@ import android.os.Process;
 import androidx.annotation.WorkerThread;
 
 /**
+ * Runnable的封装
  * A wrapper of Runnable.
  */
 public abstract class Task implements Runnable {

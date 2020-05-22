@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ *{@link IThreads}的单例实现。调用 {@link #instance()}来创建实例
  * Singleton implementation of {@link IThreads}. Call {@link #instance()} to get the instance.
  */
 public final class Threads implements IThreads {

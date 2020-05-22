@@ -40,7 +40,7 @@ public class ExemptAppFragment extends BaseFragment implements ExemptAppContract
     private LoadingDialog mLoadingDialog;
 
     public ExemptAppFragment() {
-        // Required empty public constructor
+        // Required empty public constructor. 需要公共无参构造器
     }
 
     public static ExemptAppFragment newInstance() {
